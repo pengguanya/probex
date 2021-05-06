@@ -1,7 +1,79 @@
 # Sample Space and Probability
 
 ## Recitation Problems
+
 1. Give a mathematical derivation of the formula
+$$ \mathbf{P}((A \cap B^c) \cup (A^c \cap B)) = \mathbf{P}(A) + \mathbf{P}(B) - 2\mathbf{P}(A \cap B)$$
+Derivation:
+$$\mathbf{P}(A) = \mathbf{P}(A \cap B^c) + \mathbf{P}(A \cap B)$$
+$$\mathbf{P}(B) = \mathbf{P}(A^c \cap B) + \mathbf{P}(A \cap B)$$
 
+$A \cap B^c$ and $A^c \cap B$ are disjoint events. Therefore,
+$$ \begin{align*}
+\mathbf{P}((A \cap B^c) \cup (A^c \cap B)) &= \mathbf{P}(A \cap B^c) + \mathbf{P}(A^c \cap B) \\
+&= \mathbf{P}(A) - \mathbf{P}(A \cap B) + \mathbf{P}(B) - \mathbf{P}(A \cap B) \\
+&= \mathbf{P}(A) + \mathbf{P}(B) - 2\mathbf{P}(A \cap B)
+\end{align*}$$
 
-## Problems
+2. Geniuses and chocolates. Out of the students in a class, 60% are geniuses, 70% love chocolate, and 40% fall into both categories. Determine the probability that a randomly selected student is neither a genius nor a chocolate lover.
+
+Known:
+$$\begin{align*}
+    &\mathbf{P}(A) = 60\%& \\
+    &\mathbf{P}(B) = 70\%& \\ 
+    &\mathbf{P}(A \cap B) = 40\%& \\
+\end{align*}$$
+
+Thus:
+$$\begin{align*}
+    \mathbf{P}(A^c \cap B^c) &= \mathbf{P}((A \cup B)^c& \\
+    &=\mathbf{P}(\Omega) - \mathbf{P}(A \cap B)& \\
+    &=1 - (\mathbf{P}(A) + \mathbf{B} - \mathbf{P}(A \cap B)) &\\
+    &=1 - (0.6+0.7-0.4)&\\
+    &=0.1&\\
+\end{align*}$$
+
+3. A six-sided die is loaded in a way that each even face is twice as likely as each odd face. Construct a probabilistic model for a single roll of this die, and find the probability that a 1, 2, or 3 will come up.
+
+Let 
+$$\mathbf{P}(\text{odd}) = x$$
+Because even face is twice as likely as each odd face
+$$\mathbf{P}(\text{even}) = 2 \cdot \mathbf{P}(\text{odd}) = 2x$$
+
+Use axiom
+$$\mathbf{P}(\text{even}) + \mathbf{P}(\text{odd}) = \mathbf{P}(\Omega) = 1$$
+Calculate using algebra
+$$\begin{align*}
+&2x + x = 1 &\\
+&x = 1/3 &\\
+\end{align*}$$
+
+Plug in value $\mathbf{P}(1) = \mathbf{P}(3) = 1/3$
+
+$$\mathbf{P}(2) = 2/3$$
+4. Uniform probabilities on a square. Romeo and Juliet have a date at a given time, and each will arrive at the meeting place with a delay between 0 and 1 hour, with all pairs of delays being “equally likely," that is, according to a uniform probability law on the unit square. The first to arrive will wait for 15 minutes and will leave if the other has not arrived. What is the probability that they will meet?
+
+```{r}
+eq1 <- function(x){x+1/4}
+eq2 <- function(x){x-1/4}
+df <- data.frame(x=c(0, 1))
+ggplot(df, aes(x=x)) + 
+  stat_function(fun=eq1, aes(), xlim=c(0, 1-1/4), size=1, linetype = "dashed") + 
+  stat_function(fun=eq2, aes(), xlim=c(1/4, 1), size=1, linetype = "dashed") +
+  geom_segment(aes(x = 0, y = 1, xend = 1, yend = 1), colour = "grey",  size=1, data = df) +
+  geom_segment(aes(x = 1, y = 0, xend = 1, yend = 1), colour = "grey",  size=1, data = df) +
+  theme_bw() +
+  theme(
+    legend.position = "none",
+    axis.line = element_line(colour = "black", size=1),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.border = element_blank(),
+    panel.background = element_blank()) +
+  scale_x_continuous(expand = expansion(mult = c(0, 0))) + scale_y_continuous(expand = expansion(mult = c(0, 0)))
+```
+Event $M$ that Romeo and Juliet will arrive within 15 minutes of each other is
+$$ M=\{ (x,y) \bigm\vert \left|x-y\right| \le 1/4, 0 \le x \le 1, 0 \le y \le 1 \}$$
+Probability of meeting equals to $\mathbf{P}(M)$ and equals to the area between the two dashed lines, which is $1-3/4 \cdot 3/4 =7/16$ 
+
+##Problems

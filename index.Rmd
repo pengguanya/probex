@@ -8,6 +8,12 @@ output:
   #bookdown::pdf_book: default
 ---
 
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(fig.align='center', fig.width=5, fig.height=5, fig.path='Figs/',
+                      echo=FALSE, warning=FALSE, message=FALSE)
+library(ggplot2)
+```
+
 # Preface {-}
 
 This is my own solution for the exercises in the textbook Introduction to Probability.
