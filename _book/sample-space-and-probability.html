@@ -137,6 +137,70 @@
 </div>
 <div id="problems" class="section level2">
 <h2><span class="header-section-number">1.2</span> Problems</h2>
+<p><img src="Figs/problem_1_1_01.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><strong>Solution</strong></p>
+<p><span class="math display">\[\begin{align*}
+&amp;\Omega =\{1, 2, 3, 4, 5, 6\} &amp;\\
+\\
+&amp;A = \{2, 4, 6\} &amp;\\
+&amp;B = \{4, 5, 6\} &amp;\\
+\\
+&amp;A^c = \{1, 3, 5\} &amp;\\
+&amp;B^c = \{1, 2, 3\} &amp;\\
+\\
+&amp;A^c \cup B^c = \{1, 2, 3, 5\} &amp;\\
+&amp;A^c \cap B^c = \{1, 3\} &amp;\\
+\\
+&amp;A \cup B = \{2, 4, 5, 6\} &amp;\\
+&amp;A \cap B = \{4, 6\} &amp;\\
+\\
+&amp;(A \cup B)^c = \{1, 3\} &amp;\\
+&amp;(A \cap B)^c = \{1, 2, 3, 5\}
+\end{align*}\]</span> Therefore: <span class="math display">\[\begin{align*}
+&amp;(A \cup B)^c = A^c \cap B^c = \{1, 3\} &amp;\\
+&amp;(A \cap B)^c = A^c \cup B^c = \{1, 2, 3, 5\} &amp;\\
+\end{align*}\]</span></p>
+<p><img src="Figs/problem_1_1_02.png" width="100%" style="display: block; margin: auto;" /> (a) Using <span class="math inline">\((S \cap T) \cup (S \cap U) = S \cap (T \cup U)\)</span> and let <span class="math inline">\(X = A^c\)</span> <span class="math display">\[\begin{align*}
+(X \cap B) \cup (X \cap B^c) &amp;= X \cap (B \cup B^c) \\
+                             &amp;= X \cap \Omega \\
+                             &amp;= X
+\end{align*}\]</span></p>
+<p>Plug in <span class="math inline">\(X = A^c \Rightarrow A^c = (A^c \cap B) \cup (A^c \cap B^c)\)</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>From (a), we know <span class="math inline">\(A^c = (A^c \cap B) \cup (A^c \cap B^c)\)</span>. Thus</li>
+</ol>
+<p><span class="math display">\[\begin{align*}
+(A^c \cap B) \cup (A^c \cap B^c) \cup (A \cap B^c) &amp;= X \cap (B \cup B^c) \\
+                             &amp;= A^c \cup (A \cap B^c) \\
+                             &amp;= (A^c \cup A) \cap (A^c \cup B^c) \\
+                             &amp;= \Omega \cap (A^c \cup B^c) \\
+                             &amp;= (A^c \cup B^c) \\
+                             &amp;= (A \cap B)^c
+\end{align*}\]</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li></li>
+</ol>
+<p><span class="math display">\[\begin{align*}
+&amp;\Omega =\{1, 2, 3, 4, 5, 6\} &amp;\\
+\\
+&amp;A = \{1, 3, 5\} &amp;\\
+&amp;B = \{1, 2, 3\} &amp;\\
+\\
+&amp;A^c = \{2, 4, 6\} &amp;\\
+&amp;B^c = \{4, 5, 6\} &amp;\\
+\\
+&amp;A \cap B = \{1, 3\} &amp;\\
+&amp;(A \cap B)^c = \{2, 4, 5, 6\} &amp;\\
+&amp;A^c \cap B = \{2\} &amp;\\
+&amp;A^c \cap B^c = \{2, 4, 5, 6\} &amp;\\
+&amp;A \cap B^c = \{5\} &amp;\\
+\\
+&amp;\Rightarrow &amp;\\
+\\
+(A \cap B)^c &amp;= (A^c \cap B) \cup (A^c \cap B^c) \cup (A \cap B^c) \\
+             &amp;= \{2\} \cup \{2, 4, 5, 6\} \cup \{5\} \\
+             &amp;= \{2, 4, 5, 6\}
+\end{align*}\]</span></p>
 
 </div>
 </div>

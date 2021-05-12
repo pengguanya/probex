@@ -86,3 +86,80 @@ $$\mathbf{P}(A_1 \cap A_2) \geq \mathbf{P}(A_1) + \mathbf{P}(A_2)-1$$
 $$\mathbf{P}(A_1 \cap A_2 \cap \cdots \cap A_ n)\geq \mathbf{P}(A_1)+\mathbf{P}(A_2)+\cdots +\mathbf{P}(A_ n)-(n-1)$$
 
 ##Problems
+```{r, out.width = '100%'}
+knitr::include_graphics("Figs/problem_1_1_01.png")
+```
+
+**Solution**
+
+$$\begin{align*}
+&\Omega =\{1, 2, 3, 4, 5, 6\} &\\
+\\
+&A = \{2, 4, 6\} &\\
+&B = \{4, 5, 6\} &\\
+\\
+&A^c = \{1, 3, 5\} &\\
+&B^c = \{1, 2, 3\} &\\
+\\
+&A^c \cup B^c = \{1, 2, 3, 5\} &\\
+&A^c \cap B^c = \{1, 3\} &\\
+\\
+&A \cup B = \{2, 4, 5, 6\} &\\
+&A \cap B = \{4, 6\} &\\
+\\
+&(A \cup B)^c = \{1, 3\} &\\
+&(A \cap B)^c = \{1, 2, 3, 5\}
+\end{align*}$$
+Therefore:
+$$\begin{align*}
+&(A \cup B)^c = A^c \cap B^c = \{1, 3\} &\\
+&(A \cap B)^c = A^c \cup B^c = \{1, 2, 3, 5\} &\\
+\end{align*}$$
+
+
+```{r, out.width = '100%'}
+knitr::include_graphics("Figs/problem_1_1_02.png")
+```
+(a) Using $(S \cap T) \cup (S \cap U) = S \cap (T \cup U)$ and let $X = A^c$
+$$\begin{align*}
+(X \cap B) \cup (X \cap B^c) &= X \cap (B \cup B^c) \\
+                             &= X \cap \Omega \\
+                             &= X
+\end{align*}$$
+
+Plug in $X = A^c \Rightarrow A^c = (A^c \cap B) \cup (A^c \cap B^c)$
+
+(b) From (a), we know $A^c = (A^c \cap B) \cup (A^c \cap B^c)$. Thus
+
+$$\begin{align*}
+(A^c \cap B) \cup (A^c \cap B^c) \cup (A \cap B^c) &= X \cap (B \cup B^c) \\
+                             &= A^c \cup (A \cap B^c) \\
+                             &= (A^c \cup A) \cap (A^c \cup B^c) \\
+                             &= \Omega \cap (A^c \cup B^c) \\
+                             &= (A^c \cup B^c) \\
+                             &= (A \cap B)^c
+\end{align*}$$
+
+(c) 
+
+$$\begin{align*}
+&\Omega =\{1, 2, 3, 4, 5, 6\} &\\
+\\
+&A = \{1, 3, 5\} &\\
+&B = \{1, 2, 3\} &\\
+\\
+&A^c = \{2, 4, 6\} &\\
+&B^c = \{4, 5, 6\} &\\
+\\
+&A \cap B = \{1, 3\} &\\
+&(A \cap B)^c = \{2, 4, 5, 6\} &\\
+&A^c \cap B = \{2\} &\\
+&A^c \cap B^c = \{2, 4, 5, 6\} &\\
+&A \cap B^c = \{5\} &\\
+\\
+&\Rightarrow &\\
+\\
+(A \cap B)^c &= (A^c \cap B) \cup (A^c \cap B^c) \cup (A \cap B^c) \\
+             &= \{2\} \cup \{2, 4, 5, 6\} \cup \{5\} \\
+             &= \{2, 4, 5, 6\}
+\end{align*}$$
