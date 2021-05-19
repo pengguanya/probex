@@ -42,3 +42,10 @@ Part II. Given that the second round is required, determine the conditional prob
 (b) Al retains his championship.
 
 Part III. Given that the second round was required and that it comprised only one game, what is the conditional probability that it was Bo who won the first round?
+
+## Problems {-}
+### Conditional Probability {-}
+```{r, out.width = '100%'}
+knitr::include_graphics("Figs/problem_1_3_14.png")
+```
+
