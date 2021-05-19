@@ -1,3 +1,6 @@
 sample-space-and-probability
 recitation-problems
 problems
+sets
+probabilistic-models
+rcp1

@@ -1,6 +1,6 @@
-# Sample Space and Probability
+# Sample Space and Probability {-}
 
-## Recitation Problems
+## Recitation Problems {#rcp1 -} 
 
 1. Give a mathematical derivation of the formula
 $$ \mathbf{P}((A \cap B^c) \cup (A^c \cap B)) = \mathbf{P}(A) + \mathbf{P}(B) - 2\mathbf{P}(A \cap B)$$
@@ -15,7 +15,7 @@ $$ \begin{align*}
 &= \mathbf{P}(A) + \mathbf{P}(B) - 2\mathbf{P}(A \cap B)
 \end{align*}$$
 
-2. Geniuses and chocolates. Out of the students in a class, 60% are geniuses, 70% love chocolate, and 40% fall into both categories. Determine the probability that a randomly selected student is neither a genius nor a chocolate lover.
+2. Geniuses and chocolates. Out of the students in a class, 60% are geniuses, 70% love chocolate, and 40% fall into both categories. Determine the probability that a randomly selected student is neither a genius nor a chocolate lover.{#hwks}
 
 Known:
 $$\begin{align*}
@@ -85,7 +85,8 @@ $$\mathbf{P}(A_1 \cap A_2) \geq \mathbf{P}(A_1) + \mathbf{P}(A_2)-1$$
 (b) Generalize to the case of $n$ events $A_1,A_2,\ldots , A_n$, by showing that
 $$\mathbf{P}(A_1 \cap A_2 \cap \cdots \cap A_ n)\geq \mathbf{P}(A_1)+\mathbf{P}(A_2)+\cdots +\mathbf{P}(A_ n)-(n-1)$$
 
-##Problems
+##Problems {-}
+### Sets {-}
 ```{r, out.width = '100%'}
 knitr::include_graphics("Figs/problem_1_1_01.png")
 ```
@@ -163,3 +164,120 @@ $$\begin{align*}
              &= \{2\} \cup \{2, 4, 5, 6\} \cup \{5\} \\
              &= \{2, 4, 5, 6\}
 \end{align*}$$
+```{r, out.width = '100%'}
+knitr::include_graphics("Figs/problem_1_1_03.png")
+```
+
+### Probabilistic Models {-}
+
+Problem 5 was solved in [Recitation Problems](#rcp1)
+
+```{r, out.width = '100%'}
+knitr::include_graphics("Figs/problem_1_1_06.png")
+```
+
+Experiment: Rolling this six-sided die once.
+Outcome: number on the face of the rolled die.
+$$ \Omega = \{1, 2, 3, 4, 5, 6\}$$
+Let 
+$$\begin{align*}
+&a = \mathbf{P}(\{1\}) = \mathbf{P}(\{3\}) = \mathbf{P}(\{5\}) &\\
+&b = \mathbf{P}(\{2\}) = \mathbf{P}(\{4\}) = \mathbf{P}(\{6\})
+\end{align*}$$
+
+Thus,
+$$ b = 2a $$
+
+By the additivity and normalization axioms,
+$$3a + 3b  = 1$$
+$\Rightarrow$
+
+$$\begin{align*}
+a = 1/9 \\
+b = 2/9
+\end{align*}$$
+Event outcome is less than 4: $Z= \{x | x \in \Omega\, \text{and} \,  x < 4\} = \{1, 2, 3\}$
+
+$$\begin{align*}
+\mathbf{P}(Z) &= \mathbf{P}({1}) + \mathbf{P}({2}) + \mathbf{P}({3}) \\
+              &= 1/9 + 2/9 + 1/9 \\
+              &= 4/9
+\end{align*}$$
+```{r, out.width = '100%'}
+knitr::include_graphics("Figs/problem_1_1_07.png")
+```
+
+Sample space: the set of all possible outcomes. 
+
+For this question, each outcome is a sequence of numbers for the rolled dies. There are two scenarios:
+
+1. Even number never appeared
+In this scenario, outcomes are infinite sequence $$(a_1, a_2, \ldots)$$ with each element belonging to $\{1, 3\}$
+
+2. Even number appeared
+In this scenario, outcomes are finite sequence $$(a_1, a_2, \ldots, a_n)$$ where $n$ is an arbitrary positive integer and $a_1, a_2, \ldots, a_{n-1}$ belong $\{1, 3\}$ and $a_n$ belonging to $\{2, 4\}$.
+
+The sample space contains all possible outcomes of the above two scenarios.
+
+```{r, out.width = '100%'}
+knitr::include_graphics("Figs/problem_1_1_08.png")
+```
+
+Let $p_i$ be the probability of winning against opponent in the $i$th turn. To win the tournament, you need to win the 2nd round and one of the 1st and 3rd round. The probablity to win the tournament is then
+$$p_2(p_1 + (1-p_1)p_3)$$
+The order (1, 2, 3) is optimal if and only if the above probablity is no less than the probabilities corresponding to the two alternative orders, i.e.,
+
+$$\begin{align*}
+&p_2(p_1 + (1-p_1)p_3) \ge p_1(p_2 + (1-p_2)p_3) &\\
+&p_2(p_1 + (1-p_1)p_3) \ge p_3(p_1 + (1-p_1)p_2) &\\
+\\
+&\Rightarrow \\
+\\
+&p_2 \ge p_1 &\\
+&p_2 \ge p_3
+\end{align*}$$
+Thus it is optimal to play the weakest opponent second.
+
+```{r, out.width = '100%'}
+knitr::include_graphics("Figs/problem_1_1_09.png")
+```
+
+(a)
+
+$$\begin{align*}
+A &= A \cap \Omega \\
+  &= A \cap \cup^{n}_{i=1}S_i \\
+  &= \cup^{n}_{i=1}(A \cap S_i)
+\end{align*}$$
+
+Using additivity axioms,
+$$\begin{align*}
+\mathbf{P}(A) &= \mathbf{P}(\cup^{n}_{i=1}(A \cap S_i)) \\
+              &= \sum_{i=1}^{n} \mathbf{P}(A \cap S_i)
+\end{align*}$$
+
+(b)
+
+$B \cap C^c$, $B^c \cap C$, $B \cap C$ and $B^c \cap C^c$ are particitions of $\Omega$. Use the conclusion from (a)
+
+$$
+\mathbf{P}(A) = \mathbf{P}(A \cap B \cap C^c) + \mathbf{P}(A \cap B^c \cap C) + \mathbf{P}(A \cap B \cap C) + \mathbf{P}(A \cap B^c \cap C^c)
+$$
+
+$$\begin{align*}
+&A \cap B = (A \cap B \cap C^c) \cup (A \cap B \cap C) &\\
+&\mathbf{P}(A \cap B) = \mathbf{P}(A \cap B \cap C^c) + \mathbf{P}(A \cap B \cap C)&\\
+&\\
+&A \cap C = (A \cap B^c \cap C) \cup (A \cap B \cap C) &\\
+&\mathbf{P}(A \cap C) = \mathbf{P}(A \cap B^c \cap C) + \mathbf{P}(A \cap B \cap C)
+\end{align*}$$
+
+Plug in the previous equation
+
+$$
+\mathbf{P}(A) = \mathbf{P}(A \cap B) + \mathbf{P}(A \cap C) + \mathbf{P}(A \cap B^c \cap C^c) - \mathbf{P}(A \cap B \cap C)
+$$
+```{r, out.width = '100%'}
+knitr::include_graphics("Figs/problem_1_1_10_01.png")
+knitr::include_graphics("Figs/problem_1_1_10_02.png")
+```
