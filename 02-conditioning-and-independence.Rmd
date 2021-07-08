@@ -88,3 +88,82 @@ $$\begin{align*}
                             &= \frac{\mathbf{P}(A \cap B)}{\mathbf{P}(B)} \\
                             &= \mathbf{P}(A \mid B)
 \end{align*}$$
+
+### Total probability theory and Bayes Rule {-}
+
+```{r, out.width = '100%'}
+knitr::include_graphics("Figs/problem_1_3_19.png")
+```
+
+Define events:
+
+* $A_j$: paper is in drawer $j$
+* $F_j$: Alice searches drawer $j$ and finds the paper
+* $N_j$: Alice searches drawer $j$ and does not find the paper
+
+
+Therefore:
+
+* $\mathbf{P}(A_j) = p_j$
+* $\mathbf{P}(A_j^c) = 1-p_j$
+* $\mathbf{P}(F_j \mid A_j) = d_j$
+* $\mathbf{P}(N_j \mid A_j) = \mathbf{P}(F_j^c \mid A_j) = 1 - d_j$
+* $\mathbf{P}(F_j \mid A_j^c) = 0$
+* $\mathbf{P}(F_j) = \mathbf{P}(A_j)\mathbf{P}(F_j \mid A_j) + \mathbf{P}(A_j^c)\mathbf{P}(F_j \mid A_j^c) = p_j d_j + 0 = p_j d_j$
+* $\mathbf{P}(N_j) = \mathbf{P}(F_j^c) = 1 - p_j d_j$
+
+The question is to calculate $\mathbf{P}(A_j \mid N_i)$
+
+$$\mathbf{P}(A_j \mid N_i) = \frac{\mathbf{P}(A_j)\mathbf{P}(N_i \mid A_j)}{\mathbf{P}(N_i)}$$
+
+$$\begin{equation}
+  \mathbf{P}(N_i \mid A_j) = 
+    \begin{cases}
+      1 & \text{if $i \neq j$}\\
+      1 - d_i & \text{if $i = j$}\\
+    \end{cases}       
+\end{equation}$$
+
+
+$$\begin{equation}
+  \mathbf{P}(A_j \mid N_i) = 
+    \begin{cases}
+      \dfrac{\mathbf{P}(A_j)}{\mathbf{P}(N_i)} = \dfrac{p_j}{1 - p_i d_i} & \text{if $i \neq j$}
+      \\[10pt]
+      \dfrac{\mathbf{P}(A_j) \cdot (1 - d_i)}{\mathbf{P}(N_i)} = \dfrac{p_j(1-d_i)}{1 - p_i d_i} & \text{if $i = j$}\\
+    \end{cases}       
+\end{equation}$$
+
+```{r, out.width = '100%'}
+knitr::include_graphics("Figs/problem_1_3_20.png")
+```
+
+(a)
+
+(i) Bold play: $\mathbf{P}_{\text{win}} = p_w^2 + 2(1-p_w)p_w^2 = 3p_w^2 - 2p_w^3$
+
+(ii) Timid play: $\mathbf{P}_{\text{win}} = p_d^2 p_w$
+
+(iii) Switch play: $\mathbf{P}_{\text{win}} = p_w p_d + p_w^2(1-p_d) + p_w^2(1-p_w)$
+
+(b)
+For bold play (i), $\mathbf{P}_{\text{win}} = 3p_w^2 - 2p_w^3$ is a monotonically increasing function of $p_w$ for $p_w \in [0, 1]$ ($p_w^2$ changes faster than $p_w^3$ in this range). When $p_w=1/2$, $\mathbf{P}_{\text{win}} = 1/2$. Thus for $p_w < 1/2$, $\mathbf{P}_{\text{win}} < 1/2$. Bois is more likely to lose the game.
+
+For timid play (ii), since $p_d^2 < 1$, $\mathbf{P}_{\text{win}} = p_d^2 p_w < p_w$. If $p_w=1/2$, $\mathbf{P}_{\text{win}} < p_w < 1/2$. Bois is more likely to lose the game.
+
+For switch play (iii), let $p_w = 0.45$ and $p_d = 0.9$
+$$\mathbf{P}_{\text{win}} = 0.45 \cdot 0.9 + 0.45^2 \cdot (1-0:9) + 0.45^2 \cdot (1-0.45) \approx 0.54$$
+With strategies (i) and (ii), the corresponding probabilities of a win can be calculated
+to be approximately 0.43 and 0.36, respectively. What is happening here is that with
+strategy (iii), Boris is allowed to select a playing style after seeing the result of the first game, while his opponent is not. Thus, by being able to dictate the playing style in
+each game after receiving partial information about the match's outcome, Boris gains
+an advantage.
+
+```{r, out.width = '100%'}
+knitr::include_graphics("Figs/problem_1_3_21_1.png")
+knitr::include_graphics("Figs/problem_1_3_21_2.png")
+```
+
+```{r, out.width = '100%'}
+knitr::include_graphics("Figs/problem_1_3_22.png")
+```

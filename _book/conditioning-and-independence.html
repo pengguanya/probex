@@ -69,15 +69,17 @@
 <ul class="summary">
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="" data-path="sample-space-and-probability.html"><a href="sample-space-and-probability.html"><i class="fa fa-check"></i>Sample Space and Probability</a><ul>
-<li class="chapter" data-level="" data-path="sample-space-and-probability.html"><a href="sample-space-and-probability.html#rcp1"><i class="fa fa-check"></i>Recitation Problems</a><ul>
+<li class="chapter" data-level="" data-path="sample-space-and-probability.html"><a href="sample-space-and-probability.html#rcp1"><i class="fa fa-check"></i>Recitation Problems</a></li>
+<li class="chapter" data-level="" data-path="sample-space-and-probability.html"><a href="sample-space-and-probability.html#problems"><i class="fa fa-check"></i>Problems</a><ul>
 <li class="chapter" data-level="" data-path="sample-space-and-probability.html"><a href="sample-space-and-probability.html#sets"><i class="fa fa-check"></i>Sets</a></li>
 <li class="chapter" data-level="" data-path="sample-space-and-probability.html"><a href="sample-space-and-probability.html#probabilistic-models"><i class="fa fa-check"></i>Probabilistic Models</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="conditioning-and-independence.html"><a href="conditioning-and-independence.html"><i class="fa fa-check"></i>Conditioning and independence</a><ul>
 <li class="chapter" data-level="" data-path="conditioning-and-independence.html"><a href="conditioning-and-independence.html#rcp2"><i class="fa fa-check"></i>Recitation Problems</a></li>
-<li class="chapter" data-level="" data-path="conditioning-and-independence.html"><a href="conditioning-and-independence.html#problems"><i class="fa fa-check"></i>Problems</a><ul>
+<li class="chapter" data-level="" data-path="conditioning-and-independence.html"><a href="conditioning-and-independence.html#problems-1"><i class="fa fa-check"></i>Problems</a><ul>
 <li class="chapter" data-level="" data-path="conditioning-and-independence.html"><a href="conditioning-and-independence.html#conditional-probability"><i class="fa fa-check"></i>Conditional Probability</a></li>
+<li class="chapter" data-level="" data-path="conditioning-and-independence.html"><a href="conditioning-and-independence.html#total-probability-theory-and-bayes-rule"><i class="fa fa-check"></i>Total probability theory and Bayes Rule</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -131,7 +133,7 @@
 <p>Part II. Given that the second round is required, determine the conditional probabilities that (a) Bo is the surviving challenger. (b) Al retains his championship.</p>
 <p>Part III. Given that the second round was required and that it comprised only one game, what is the conditional probability that it was Bo who won the first round?</p>
 </div>
-<div id="problems" class="section level2 unnumbered">
+<div id="problems-1" class="section level2 unnumbered">
 <h2>Problems</h2>
 <div id="conditional-probability" class="section level3 unnumbered">
 <h3>Conditional Probability</h3>
@@ -163,6 +165,59 @@
                             &amp;= \frac{\mathbf{P}(A \cap B)}{\mathbf{P}(B)} \\
                             &amp;= \mathbf{P}(A \mid B)
 \end{align*}\]</span></p>
+</div>
+<div id="total-probability-theory-and-bayes-rule" class="section level3 unnumbered">
+<h3>Total probability theory and Bayes Rule</h3>
+<p><img src="Figs/problem_1_3_19.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Define events:</p>
+<ul>
+<li><span class="math inline">\(A_j\)</span>: paper is in drawer <span class="math inline">\(j\)</span></li>
+<li><span class="math inline">\(F_j\)</span>: Alice searches drawer <span class="math inline">\(j\)</span> and finds the paper</li>
+<li><span class="math inline">\(N_j\)</span>: Alice searches drawer <span class="math inline">\(j\)</span> and does not find the paper</li>
+</ul>
+<p>Therefore:</p>
+<ul>
+<li><span class="math inline">\(\mathbf{P}(A_j) = p_j\)</span></li>
+<li><span class="math inline">\(\mathbf{P}(A_j^c) = 1-p_j\)</span></li>
+<li><span class="math inline">\(\mathbf{P}(F_j \mid A_j) = d_j\)</span></li>
+<li><span class="math inline">\(\mathbf{P}(N_j \mid A_j) = \mathbf{P}(F_j^c \mid A_j) = 1 - d_j\)</span></li>
+<li><span class="math inline">\(\mathbf{P}(F_j \mid A_j^c) = 0\)</span></li>
+<li><span class="math inline">\(\mathbf{P}(F_j) = \mathbf{P}(A_j)\mathbf{P}(F_j \mid A_j) + \mathbf{P}(A_j^c)\mathbf{P}(F_j \mid A_j^c) = p_j d_j + 0 = p_j d_j\)</span></li>
+<li><span class="math inline">\(\mathbf{P}(N_j) = \mathbf{P}(F_j^c) = 1 - p_j d_j\)</span></li>
+</ul>
+<p>The question is to calculate <span class="math inline">\(\mathbf{P}(A_j \mid N_i)\)</span></p>
+<p><span class="math display">\[\mathbf{P}(A_j \mid N_i) = \frac{\mathbf{P}(A_j)\mathbf{P}(N_i \mid A_j)}{\mathbf{P}(N_i)}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+  \mathbf{P}(N_i \mid A_j) = 
+    \begin{cases}
+      1 &amp; \text{if $i \neq j$}\\
+      1 - d_i &amp; \text{if $i = j$}\\
+    \end{cases}       
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+  \mathbf{P}(A_j \mid N_i) = 
+    \begin{cases}
+      \dfrac{\mathbf{P}(A_j)}{\mathbf{P}(N_i)} = \dfrac{p_j}{1 - p_i d_i} &amp; \text{if $i \neq j$}
+      \\[10pt]
+      \dfrac{\mathbf{P}(A_j) \cdot (1 - d_i)}{\mathbf{P}(N_i)} = \dfrac{p_j(1-d_i)}{1 - p_i d_i} &amp; \text{if $i = j$}\\
+    \end{cases}       
+\end{equation}\]</span></p>
+<p><img src="Figs/problem_1_3_20.png" width="100%" style="display: block; margin: auto;" /></p>
+<ol style="list-style-type: lower-alpha">
+<li></li>
+<li>Bold play: <span class="math inline">\(\mathbf{P}_{\text{win}} = p_w^2 + 2(1-p_w)p_w^2 = 3p_w^2 - 2p_w^3\)</span></li>
+</ol>
+<ol start="2" style="list-style-type: lower-roman">
+<li><p>Timid play: <span class="math inline">\(\mathbf{P}_{\text{win}} = p_d^2 p_w\)</span></p></li>
+<li><p>Switch play: <span class="math inline">\(\mathbf{P}_{\text{win}} = p_w p_d + p_w^2(1-p_d) + p_w^2(1-p_w)\)</span></p></li>
+</ol>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>For bold play (i), <span class="math inline">\(\mathbf{P}_{\text{win}} = 3p_w^2 - 2p_w^3\)</span> is a monotonically increasing function of <span class="math inline">\(p_w\)</span> for <span class="math inline">\(p_w \in [0, 1]\)</span> (<span class="math inline">\(p_w^2\)</span> changes faster than <span class="math inline">\(p_w^3\)</span> in this range). When <span class="math inline">\(p_w=1/2\)</span>, <span class="math inline">\(\mathbf{P}_{\text{win}} = 1/2\)</span>. Thus for <span class="math inline">\(p_w &lt; 1/2\)</span>, <span class="math inline">\(\mathbf{P}_{\text{win}} &lt; 1/2\)</span>. Bois is more likely to lose the game.</li>
+</ol>
+<p>For timid play (ii), since <span class="math inline">\(p_d^2 &lt; 1\)</span>, <span class="math inline">\(\mathbf{P}_{\text{win}} = p_d^2 p_w &lt; p_w\)</span>. If <span class="math inline">\(p_w=1/2\)</span>, <span class="math inline">\(\mathbf{P}_{\text{win}} &lt; p_w &lt; 1/2\)</span>. Bois is more likely to lose the game.</p>
+<p>For switch play (iii), let <span class="math inline">\(p_w = 0.45\)</span> and <span class="math inline">\(p_d = 0.9\)</span> <span class="math display">\[\mathbf{P}_{\text{win}} = 0.45 \cdot 0.9 + 0.45^2 \cdot (1-0:9) + 0.45^2 \cdot (1-0.45) \approx 0.54\]</span> With strategies (i) and (ii), the corresponding probabilities of a win can be calculated to be approximately 0.43 and 0.36, respectively. What is happening here is that with strategy (iii), Boris is allowed to select a playing style after seeing the result of the first game, while his opponent is not. Thus, by being able to dictate the playing style in each game after receiving partial information about the match's outcome, Boris gains an advantage.</p>
+<p><img src="Figs/problem_1_3_21_1.png" width="100%" style="display: block; margin: auto;" /><img src="Figs/problem_1_3_21_2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="Figs/problem_1_3_22.png" width="100%" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>
