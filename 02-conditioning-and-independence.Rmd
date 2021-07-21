@@ -1,4 +1,4 @@
-# Conditioning and independence {-}
+# Conditioning and Independence {-}
 
 ## Recitation Problems {#rcp2 -} 
 

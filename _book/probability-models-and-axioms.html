@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Probability Models and Axioms | Solution for Text book exercise of Introduction to Probability</title>
+  <meta name="description" content="Probability Models and Axioms | Solution for Text book exercise of Introduction to Probability" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Probability Models and Axioms | Solution for Text book exercise of Introduction to Probability" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Probability Models and Axioms | Solution for Text book exercise of Introduction to Probability" />
+  
+  
+  
+
+<meta name="author" content="G.Peng" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="conditioning-and-independence.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="probability-models-and-axioms.html"><a href="probability-models-and-axioms.html"><i class="fa fa-check"></i>Probability Models and Axioms</a><ul>
+<li class="chapter" data-level="" data-path="probability-models-and-axioms.html"><a href="probability-models-and-axioms.html#rcp1"><i class="fa fa-check"></i>Recitation Problems</a></li>
+<li class="chapter" data-level="" data-path="probability-models-and-axioms.html"><a href="probability-models-and-axioms.html#problems"><i class="fa fa-check"></i>Problems</a><ul>
+<li class="chapter" data-level="" data-path="probability-models-and-axioms.html"><a href="probability-models-and-axioms.html#sets"><i class="fa fa-check"></i>Sets</a></li>
+<li class="chapter" data-level="" data-path="probability-models-and-axioms.html"><a href="probability-models-and-axioms.html#probabilistic-models"><i class="fa fa-check"></i>Probabilistic Models</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="conditioning-and-independence.html"><a href="conditioning-and-independence.html"><i class="fa fa-check"></i>Conditioning and Independence</a><ul>
+<li class="chapter" data-level="" data-path="conditioning-and-independence.html"><a href="conditioning-and-independence.html#rcp2"><i class="fa fa-check"></i>Recitation Problems</a></li>
+<li class="chapter" data-level="" data-path="conditioning-and-independence.html"><a href="conditioning-and-independence.html#problems-1"><i class="fa fa-check"></i>Problems</a><ul>
+<li class="chapter" data-level="" data-path="conditioning-and-independence.html"><a href="conditioning-and-independence.html#conditional-probability"><i class="fa fa-check"></i>Conditional Probability</a></li>
+<li class="chapter" data-level="" data-path="conditioning-and-independence.html"><a href="conditioning-and-independence.html#total-probability-theory-and-bayes-rule"><i class="fa fa-check"></i>Total probability theory and Bayes Rule</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="counting.html"><a href="counting.html"><i class="fa fa-check"></i>Counting</a></li>
+<li class="chapter" data-level="" data-path="discrete-random-variables.html"><a href="discrete-random-variables.html"><i class="fa fa-check"></i>Discrete Random Variables</a><ul>
+<li class="chapter" data-level="" data-path="discrete-random-variables.html"><a href="discrete-random-variables.html#rcp4"><i class="fa fa-check"></i>Recitation Problems</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Solution for Text book exercise of Introduction to Probability</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="probability-models-and-axioms" class="section level1 unnumbered">
+<h1>Probability Models and Axioms</h1>
+<div id="rcp1" class="section level2 unnumbered">
+<h2>Recitation Problems</h2>
+<ol style="list-style-type: decimal">
+<li>Give a mathematical derivation of the formula <span class="math display">\[ \mathbf{P}((A \cap B^c) \cup (A^c \cap B)) = \mathbf{P}(A) + \mathbf{P}(B) - 2\mathbf{P}(A \cap B)\]</span> Derivation: <span class="math display">\[\mathbf{P}(A) = \mathbf{P}(A \cap B^c) + \mathbf{P}(A \cap B)\]</span> <span class="math display">\[\mathbf{P}(B) = \mathbf{P}(A^c \cap B) + \mathbf{P}(A \cap B)\]</span></li>
+</ol>
+<p><span class="math inline">\(A \cap B^c\)</span> and <span class="math inline">\(A^c \cap B\)</span> are disjoint events. Therefore, <span class="math display">\[ \begin{align*}
+\mathbf{P}((A \cap B^c) \cup (A^c \cap B)) &amp;= \mathbf{P}(A \cap B^c) + \mathbf{P}(A^c \cap B) \\
+&amp;= \mathbf{P}(A) - \mathbf{P}(A \cap B) + \mathbf{P}(B) - \mathbf{P}(A \cap B) \\
+&amp;= \mathbf{P}(A) + \mathbf{P}(B) - 2\mathbf{P}(A \cap B)
+\end{align*}\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Geniuses and chocolates. Out of the students in a class, 60% are geniuses, 70% love chocolate, and 40% fall into both categories. Determine the probability that a randomly selected student is neither a genius nor a chocolate lover.{#hwks}</li>
+</ol>
+<p>Known: <span class="math display">\[\begin{align*}
+    &amp;\mathbf{P}(A) = 60\%&amp; \\
+    &amp;\mathbf{P}(B) = 70\%&amp; \\ 
+    &amp;\mathbf{P}(A \cap B) = 40\%&amp; \\
+\end{align*}\]</span></p>
+<p>Thus: <span class="math display">\[\begin{align*}
+    \mathbf{P}(A^c \cap B^c) &amp;= \mathbf{P}((A \cup B)^c&amp; \\
+    &amp;=\mathbf{P}(\Omega) - \mathbf{P}(A \cap B)&amp; \\
+    &amp;=1 - (\mathbf{P}(A) + \mathbf{B} - \mathbf{P}(A \cap B)) &amp;\\
+    &amp;=1 - (0.6+0.7-0.4)&amp;\\
+    &amp;=0.1&amp;\\
+\end{align*}\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>A six-sided die is loaded in a way that each even face is twice as likely as each odd face. Construct a probabilistic model for a single roll of this die, and find the probability that a 1, 2, or 3 will come up.</li>
+</ol>
+<p>Let <span class="math display">\[\mathbf{P}(\text{odd}) = x\]</span> Because even face is twice as likely as each odd face <span class="math display">\[\mathbf{P}(\text{even}) = 2 \cdot \mathbf{P}(\text{odd}) = 2x\]</span></p>
+<p>Use axiom <span class="math display">\[\mathbf{P}(\text{even}) + \mathbf{P}(\text{odd}) = \mathbf{P}(\Omega) = 1\]</span> Calculate using algebra <span class="math display">\[\begin{align*}
+&amp;2x + x = 1 &amp;\\
+&amp;x = 1/3 &amp;\\
+\end{align*}\]</span></p>
+<p>Plug in value <span class="math inline">\(\mathbf{P}(1) = \mathbf{P}(3) = 1/3\)</span></p>
+<p><span class="math display">\[\mathbf{P}(2) = 2/3\]</span> 4. Uniform probabilities on a square. Romeo and Juliet have a date at a given time, and each will arrive at the meeting place with a delay between 0 and 1 hour, with all pairs of delays being “equally likely,&quot; that is, according to a uniform probability law on the unit square. The first to arrive will wait for 15 minutes and will leave if the other has not arrived. What is the probability that they will meet?</p>
+<p><img src="Figs/unnamed-chunk-1-1.png" width="480" style="display: block; margin: auto;" /> Event <span class="math inline">\(M\)</span> that Romeo and Juliet will arrive within 15 minutes of each other is <span class="math display">\[ M=\{ (x,y) \bigm\vert \left|x-y\right| \le 1/4, 0 \le x \le 1, 0 \le y \le 1 \}\]</span> Probability of meeting equals to <span class="math inline">\(\mathbf{P}(M)\)</span> and equals to the area between the two dashed lines, which is <span class="math inline">\(1-3/4 \cdot 3/4 =7/16\)</span></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Bonferroni's inequality.</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>Prove that for any two events <span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span>, we have <span class="math display">\[\mathbf{P}(A_1 \cap A_2) \geq \mathbf{P}(A_1) + \mathbf{P}(A_2)-1\]</span></li>
+<li>Generalize to the case of <span class="math inline">\(n\)</span> events <span class="math inline">\(A_1,A_2,\ldots , A_n\)</span>, by showing that <span class="math display">\[\mathbf{P}(A_1 \cap A_2 \cap \cdots \cap A_ n)\geq \mathbf{P}(A_1)+\mathbf{P}(A_2)+\cdots +\mathbf{P}(A_ n)-(n-1)\]</span></li>
+</ol>
+</div>
+<div id="problems" class="section level2 unnumbered">
+<h2>Problems</h2>
+<div id="sets" class="section level3 unnumbered">
+<h3>Sets</h3>
+<p><img src="Figs/problem_1_1_01.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><strong>Solution</strong></p>
+<p><span class="math display">\[\begin{align*}
+&amp;\Omega =\{1, 2, 3, 4, 5, 6\} &amp;\\
+\\
+&amp;A = \{2, 4, 6\} &amp;\\
+&amp;B = \{4, 5, 6\} &amp;\\
+\\
+&amp;A^c = \{1, 3, 5\} &amp;\\
+&amp;B^c = \{1, 2, 3\} &amp;\\
+\\
+&amp;A^c \cup B^c = \{1, 2, 3, 5\} &amp;\\
+&amp;A^c \cap B^c = \{1, 3\} &amp;\\
+\\
+&amp;A \cup B = \{2, 4, 5, 6\} &amp;\\
+&amp;A \cap B = \{4, 6\} &amp;\\
+\\
+&amp;(A \cup B)^c = \{1, 3\} &amp;\\
+&amp;(A \cap B)^c = \{1, 2, 3, 5\}
+\end{align*}\]</span> Therefore: <span class="math display">\[\begin{align*}
+&amp;(A \cup B)^c = A^c \cap B^c = \{1, 3\} &amp;\\
+&amp;(A \cap B)^c = A^c \cup B^c = \{1, 2, 3, 5\} &amp;\\
+\end{align*}\]</span></p>
+<p><img src="Figs/problem_1_1_02.png" width="100%" style="display: block; margin: auto;" /> (a) Using <span class="math inline">\((S \cap T) \cup (S \cap U) = S \cap (T \cup U)\)</span> and let <span class="math inline">\(X = A^c\)</span> <span class="math display">\[\begin{align*}
+(X \cap B) \cup (X \cap B^c) &amp;= X \cap (B \cup B^c) \\
+                             &amp;= X \cap \Omega \\
+                             &amp;= X
+\end{align*}\]</span></p>
+<p>Plug in <span class="math inline">\(X = A^c \Rightarrow A^c = (A^c \cap B) \cup (A^c \cap B^c)\)</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>From (a), we know <span class="math inline">\(A^c = (A^c \cap B) \cup (A^c \cap B^c)\)</span>. Thus</li>
+</ol>
+<p><span class="math display">\[\begin{align*}
+(A^c \cap B) \cup (A^c \cap B^c) \cup (A \cap B^c) &amp;= X \cap (B \cup B^c) \\
+                             &amp;= A^c \cup (A \cap B^c) \\
+                             &amp;= (A^c \cup A) \cap (A^c \cup B^c) \\
+                             &amp;= \Omega \cap (A^c \cup B^c) \\
+                             &amp;= (A^c \cup B^c) \\
+                             &amp;= (A \cap B)^c
+\end{align*}\]</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li></li>
+</ol>
+<p><span class="math display">\[\begin{align*}
+&amp;\Omega =\{1, 2, 3, 4, 5, 6\} &amp;\\
+\\
+&amp;A = \{1, 3, 5\} &amp;\\
+&amp;B = \{1, 2, 3\} &amp;\\
+\\
+&amp;A^c = \{2, 4, 6\} &amp;\\
+&amp;B^c = \{4, 5, 6\} &amp;\\
+\\
+&amp;A \cap B = \{1, 3\} &amp;\\
+&amp;(A \cap B)^c = \{2, 4, 5, 6\} &amp;\\
+&amp;A^c \cap B = \{2\} &amp;\\
+&amp;A^c \cap B^c = \{2, 4, 5, 6\} &amp;\\
+&amp;A \cap B^c = \{5\} &amp;\\
+\\
+&amp;\Rightarrow &amp;\\
+\\
+(A \cap B)^c &amp;= (A^c \cap B) \cup (A^c \cap B^c) \cup (A \cap B^c) \\
+             &amp;= \{2\} \cup \{2, 4, 5, 6\} \cup \{5\} \\
+             &amp;= \{2, 4, 5, 6\}
+\end{align*}\]</span> <img src="Figs/problem_1_1_03.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="probabilistic-models" class="section level3 unnumbered">
+<h3>Probabilistic Models</h3>
+<p>Problem 5 was solved in <a href="probability-models-and-axioms.html#rcp1">Recitation Problems</a></p>
+<p><img src="Figs/problem_1_1_06.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Experiment: Rolling this six-sided die once. Outcome: number on the face of the rolled die. <span class="math display">\[ \Omega = \{1, 2, 3, 4, 5, 6\}\]</span> Let <span class="math display">\[\begin{align*}
+&amp;a = \mathbf{P}(\{1\}) = \mathbf{P}(\{3\}) = \mathbf{P}(\{5\}) &amp;\\
+&amp;b = \mathbf{P}(\{2\}) = \mathbf{P}(\{4\}) = \mathbf{P}(\{6\})
+\end{align*}\]</span></p>
+<p>Thus, <span class="math display">\[ b = 2a \]</span></p>
+<p>By the additivity and normalization axioms, <span class="math display">\[3a + 3b  = 1\]</span> <span class="math inline">\(\Rightarrow\)</span></p>
+<p><span class="math display">\[\begin{align*}
+a = 1/9 \\
+b = 2/9
+\end{align*}\]</span> Event outcome is less than 4: <span class="math inline">\(Z= \{x | x \in \Omega\, \text{and} \, x &lt; 4\} = \{1, 2, 3\}\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\mathbf{P}(Z) &amp;= \mathbf{P}({1}) + \mathbf{P}({2}) + \mathbf{P}({3}) \\
+              &amp;= 1/9 + 2/9 + 1/9 \\
+              &amp;= 4/9
+\end{align*}\]</span> <img src="Figs/problem_1_1_07.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Sample space: the set of all possible outcomes.</p>
+<p>For this question, each outcome is a sequence of numbers for the rolled dies. There are two scenarios:</p>
+<ol style="list-style-type: decimal">
+<li><p>Even number never appeared In this scenario, outcomes are infinite sequence <span class="math display">\[(a_1, a_2, \ldots)\]</span> with each element belonging to <span class="math inline">\(\{1, 3\}\)</span></p></li>
+<li><p>Even number appeared In this scenario, outcomes are finite sequence <span class="math display">\[(a_1, a_2, \ldots, a_n)\]</span> where <span class="math inline">\(n\)</span> is an arbitrary positive integer and <span class="math inline">\(a_1, a_2, \ldots, a_{n-1}\)</span> belong <span class="math inline">\(\{1, 3\}\)</span> and <span class="math inline">\(a_n\)</span> belonging to <span class="math inline">\(\{2, 4\}\)</span>.</p></li>
+</ol>
+<p>The sample space contains all possible outcomes of the above two scenarios.</p>
+<p><img src="Figs/problem_1_1_08.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Let <span class="math inline">\(p_i\)</span> be the probability of winning against opponent in the <span class="math inline">\(i\)</span>th turn. To win the tournament, you need to win the 2nd round and one of the 1st and 3rd round. The probablity to win the tournament is then <span class="math display">\[p_2(p_1 + (1-p_1)p_3)\]</span> The order (1, 2, 3) is optimal if and only if the above probablity is no less than the probabilities corresponding to the two alternative orders, i.e.,</p>
+<p><span class="math display">\[\begin{align*}
+&amp;p_2(p_1 + (1-p_1)p_3) \ge p_1(p_2 + (1-p_2)p_3) &amp;\\
+&amp;p_2(p_1 + (1-p_1)p_3) \ge p_3(p_1 + (1-p_1)p_2) &amp;\\
+\\
+&amp;\Rightarrow \\
+\\
+&amp;p_2 \ge p_1 &amp;\\
+&amp;p_2 \ge p_3
+\end{align*}\]</span> Thus it is optimal to play the weakest opponent second.</p>
+<p><img src="Figs/problem_1_1_09.png" width="100%" style="display: block; margin: auto;" /></p>
+<ol style="list-style-type: lower-alpha">
+<li></li>
+</ol>
+<p><span class="math display">\[\begin{align*}
+A &amp;= A \cap \Omega \\
+  &amp;= A \cap \cup^{n}_{i=1}S_i \\
+  &amp;= \cup^{n}_{i=1}(A \cap S_i)
+\end{align*}\]</span></p>
+<p>Using additivity axioms, <span class="math display">\[\begin{align*}
+\mathbf{P}(A) &amp;= \mathbf{P}(\cup^{n}_{i=1}(A \cap S_i)) \\
+              &amp;= \sum_{i=1}^{n} \mathbf{P}(A \cap S_i)
+\end{align*}\]</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li></li>
+</ol>
+<p><span class="math inline">\(B \cap C^c\)</span>, <span class="math inline">\(B^c \cap C\)</span>, <span class="math inline">\(B \cap C\)</span> and <span class="math inline">\(B^c \cap C^c\)</span> are particitions of <span class="math inline">\(\Omega\)</span>. Use the conclusion from (a)</p>
+<p><span class="math display">\[
+\mathbf{P}(A) = \mathbf{P}(A \cap B \cap C^c) + \mathbf{P}(A \cap B^c \cap C) + \mathbf{P}(A \cap B \cap C) + \mathbf{P}(A \cap B^c \cap C^c)
+\]</span></p>
+<p><span class="math display">\[\begin{align*}
+&amp;A \cap B = (A \cap B \cap C^c) \cup (A \cap B \cap C) &amp;\\
+&amp;\mathbf{P}(A \cap B) = \mathbf{P}(A \cap B \cap C^c) + \mathbf{P}(A \cap B \cap C)&amp;\\
+&amp;\\
+&amp;A \cap C = (A \cap B^c \cap C) \cup (A \cap B \cap C) &amp;\\
+&amp;\mathbf{P}(A \cap C) = \mathbf{P}(A \cap B^c \cap C) + \mathbf{P}(A \cap B \cap C)
+\end{align*}\]</span></p>
+<p>Plug in the previous equation</p>
+<p><span class="math display">\[
+\mathbf{P}(A) = \mathbf{P}(A \cap B) + \mathbf{P}(A \cap C) + \mathbf{P}(A \cap B^c \cap C^c) - \mathbf{P}(A \cap B \cap C)
+\]</span> <img src="Figs/problem_1_1_10_01.png" width="100%" style="display: block; margin: auto;" /><img src="Figs/problem_1_1_10_02.png" width="100%" style="display: block; margin: auto;" /></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conditioning-and-independence.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

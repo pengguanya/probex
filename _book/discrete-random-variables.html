@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Solution for Text book exercise of Introduction to Probability</title>
-  <meta name="description" content="Solution for Text book exercise of Introduction to Probability" />
+  <title>Discrete Random Variables | Solution for Text book exercise of Introduction to Probability</title>
+  <meta name="description" content="Discrete Random Variables | Solution for Text book exercise of Introduction to Probability" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Solution for Text book exercise of Introduction to Probability" />
+  <meta property="og:title" content="Discrete Random Variables | Solution for Text book exercise of Introduction to Probability" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Solution for Text book exercise of Introduction to Probability" />
+  <meta name="twitter:title" content="Discrete Random Variables | Solution for Text book exercise of Introduction to Probability" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="counting.html"/>
 
-<link rel="next" href="probability-models-and-axioms.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -69,15 +69,14 @@
 <ul class="summary">
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="" data-path="probability-models-and-axioms.html"><a href="probability-models-and-axioms.html"><i class="fa fa-check"></i>Probability Models and Axioms</a><ul>
-<li class="chapter" data-level="" data-path="probability-models-and-axioms.html"><a href="probability-models-and-axioms.html#rcp1"><i class="fa fa-check"></i>Recitation Problems</a></li>
-<li class="chapter" data-level="" data-path="probability-models-and-axioms.html"><a href="probability-models-and-axioms.html#problems"><i class="fa fa-check"></i>Problems</a><ul>
+<li class="chapter" data-level="" data-path="probability-models-and-axioms.html"><a href="probability-models-and-axioms.html#rcp1"><i class="fa fa-check"></i>Recitation Problems</a><ul>
 <li class="chapter" data-level="" data-path="probability-models-and-axioms.html"><a href="probability-models-and-axioms.html#sets"><i class="fa fa-check"></i>Sets</a></li>
 <li class="chapter" data-level="" data-path="probability-models-and-axioms.html"><a href="probability-models-and-axioms.html#probabilistic-models"><i class="fa fa-check"></i>Probabilistic Models</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="conditioning-and-independence.html"><a href="conditioning-and-independence.html"><i class="fa fa-check"></i>Conditioning and Independence</a><ul>
 <li class="chapter" data-level="" data-path="conditioning-and-independence.html"><a href="conditioning-and-independence.html#rcp2"><i class="fa fa-check"></i>Recitation Problems</a></li>
-<li class="chapter" data-level="" data-path="conditioning-and-independence.html"><a href="conditioning-and-independence.html#problems-1"><i class="fa fa-check"></i>Problems</a><ul>
+<li class="chapter" data-level="" data-path="conditioning-and-independence.html"><a href="conditioning-and-independence.html#problems"><i class="fa fa-check"></i>Problems</a><ul>
 <li class="chapter" data-level="" data-path="conditioning-and-independence.html"><a href="conditioning-and-independence.html#conditional-probability"><i class="fa fa-check"></i>Conditional Probability</a></li>
 <li class="chapter" data-level="" data-path="conditioning-and-independence.html"><a href="conditioning-and-independence.html#total-probability-theory-and-bayes-rule"><i class="fa fa-check"></i>Total probability theory and Bayes Rule</a></li>
 </ul></li>
@@ -103,22 +102,36 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Solution for Text book exercise of Introduction to Probability</h1>
-<p class="author"><em>G.Peng</em></p>
-</div>
-<div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
-<p>This is my own solution for the exercises in the textbook Introduction to Probability.</p>
+<div id="discrete-random-variables" class="section level1 unnumbered">
+<h1>Discrete Random Variables</h1>
+<div id="rcp4" class="section level2 unnumbered">
+<h2>Recitation Problems</h2>
+<ol style="list-style-type: decimal">
+<li>PMF of a function of a random variable</li>
+</ol>
+<p>PMF of a function of a random variable. Consider a random variable <span class="math inline">\(X\)</span> such that</p>
+<p><span class="math display">\[
+p_ X(x) = \left\{ \begin{array}{cl} \frac{x^2}{a},&amp;  \mbox{for } x\in \{ -3,-2,-1,1,2, 3\} ,\\ 0,&amp;  \mbox{otherwise,}\end{array}\right.
+\]</span></p>
+<p>where <span class="math inline">\(a &gt; 0\)</span> is a real parameter.</p>
+<p>Find <span class="math inline">\(a\)</span>.</p>
+<p>What is the PMF of the random variable <span class="math inline">\(Z=X^2\)</span>?</p>
+<p><strong>Solution</strong> 1. <span class="math display">\[\sum_{x} P_{X}(x) = 1 \]</span></p>
+<p><span class="math display">\[\sum_{x \in \{-3,-2,-1,1,2, 3\}} x^2/a = 1\]</span> <span class="math display">\[\Longrightarrow\]</span> <span class="math display">\[a=1/28\]</span> 2. <span class="math inline">\(Z= g(x)\)</span>, <span class="math inline">\(P_Z(z) = \sum_{\{x \mid g(x) = z\}}P_X(x)\)</span></p>
+<p>Here <span class="math inline">\(Z=X^2\)</span>, <span class="math inline">\(P_Z(z) = \sum_{\{x \mid x^2 = z\}}P_X(x)\)</span></p>
+<p><span class="math display">\[
+p_Z(z) = \left\{ \begin{array}{cl} \frac{z}{14},&amp;  \mbox{for } z\in \{ 9, 4, 1\} ,\\ 0,&amp;  \mbox{otherwise,}\end{array}\right.
+\]</span></p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
+<a href="counting.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="probability-models-and-axioms.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

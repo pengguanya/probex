@@ -1,0 +1,32 @@
+# Discrete Random Variables {-}
+
+## Recitation Problems {#rcp4 -}
+
+1. PMF of a function of a random variable
+
+PMF of a function of a random variable. Consider a random variable $X$ such that
+
+$$
+p_ X(x) = \left\{ \begin{array}{cl} \frac{x^2}{a},&  \mbox{for } x\in \{ -3,-2,-1,1,2, 3\} ,\\ 0,&  \mbox{otherwise,}\end{array}\right.
+$$
+
+where $a > 0$ is a real parameter.
+
+Find $a$.
+
+What is the PMF of the random variable $Z=X^2$?
+
+**Solution**
+1.
+$$\sum_{x} P_{X}(x) = 1 $$
+
+$$\sum_{x \in \{-3,-2,-1,1,2, 3\}} x^2/a = 1$$
+$$\Longrightarrow$$
+$$a=1/28$$
+2. $Z= g(x)$, $P_Z(z) = \sum_{\{x \mid g(x) = z\}}P_X(x)$
+
+Here $Z=X^2$,  $P_Z(z) = \sum_{\{x \mid x^2 = z\}}P_X(x)$
+
+$$
+p_Z(z) = \left\{ \begin{array}{cl} \frac{z}{14},&  \mbox{for } z\in \{ 9, 4, 1\} ,\\ 0,&  \mbox{otherwise,}\end{array}\right.
+$$

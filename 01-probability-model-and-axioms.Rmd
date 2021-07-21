@@ -1,4 +1,4 @@
-# Sample Space and Probability {-}
+# Probability Models and Axioms {-}
 
 ## Recitation Problems {#rcp1 -} 
 
